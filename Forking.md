@@ -61,3 +61,10 @@ git push -u origin test/forking-example
 ***Step 6:*** Go to Github and click the Compare & pull request button. If it's not available, click on the branch dropdown button and change it from main to the branch name of test/forking-example:
 ![alt text](image-6.png)
 After clicking the Compare & pull request button it will now redirect to the original repository in order to create the PR.
+
+![alt text](image-7.png)
+
+Each repository will have its own guidelines for submitting PRs against them and usually provide a how-to contribute guide. As you can see, in order to get the changes from our forked repository, you need to compare it against the original. This gives a lot of control to the repository owners of the original and they get to decide what makes the cut to be merged in.
+
+In this lesson you covered the basics of forking a repository, adding some changes, and then creating a PR to get it back to the original repository.
+
