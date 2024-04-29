@@ -60,3 +60,55 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 In order to merge, Developer 2 needs to see and compare the changes from Developer 1. It is good practice to first see what branch is causing the merge issue. Developer 2 runs the following command:
+
+```console
+ git log --merge
+
+commit 79bca730b68e5045b38b96bec35ad374f44fe4e3 (HEAD -> feature2)
+Author: Developer 2 
+<developer2@demo.com>
+Date:   Sat Jan 29 16:55:40 2022 +0000
+
+    chore: add feature 2
+
+commit 678b0648107b7c53e90682f2eb8103c59f3cb0c0
+Author: Developer 1 
+<developer1@demo.com>
+Date:   Sat Jan 29 16:53:40 2022 +0000
+
+    chore: add feature 1
+```
+We can see from the above code that the team's conflicting changes occurred in feature 1 and 2 branches. Developer 2 now wants to see the change that is causing the conflict.
+
+```console
+git diff
+
+diff --cc Feature.js
+index 1b1136f,c3be92f..0000000
+--- a/Feature.js
++++ b/Feature.js
+@@@ -1,4 -1,4 +1,8 @@@
+  let add = (a, b) => {
+++<<<<<<< HEAD
+ +  if(a + b > 10) { return 'way too much'}
+++=======
++   if(a + b > 10){ return 'too much' }
+++>>>>>>> d3b3cc0d9b6b084eef3e0afe111adf9fe612898e
+    return a + b;
+  }
+```
+
+The only difference is the wording in the return statement. Developer 1 added 'too much,' but Developer 2 added 'far too much. Everything else is identical in terms of merging and it's a pretty easy fix. Git will show arrows <<< >>> to signify the changes. Developer 2 removes the markers so the code is ready for submission:
+
+```console
+let add = (a, b) => {
+  if(a + b > 10) { return 'way too much'}
+  return a + b;
+}
+```
+```console
+ git add Feature.js
+ git commit -m 'fix merge conflicts'
+ git push -u origin feature2
+```
+Developer 2 has now fixed a merge conflict and can create their PR to get the code merged into the main line.
