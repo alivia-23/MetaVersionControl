@@ -9,23 +9,26 @@ Joe created a new branch on his repository and added a new cool feature that he 
 ### Forking
 Let us take a look at how you can fork an existing repository that is available on GitHub. For this example, we used a repository we can access on GitHub.
 
-* Step 1: If you have access to your own repository on GitHub, you can access this now to follow along.
+*** Step 1:** If you have access to your own repository on GitHub, you can access this now to follow along.
 
-* Step 2: Click on the Fork button on the top right of the page.
+*** Step 2:*** Click on the Fork button on the top right of the page.
 ![alt text](image-2.png)
-* Step 3: It will then prompt you to fork the repository to your desired account. Choose the account you wish to fork to.
+*** Step 3:*** It will then prompt you to fork the repository to your desired account. Choose the account you wish to fork to.
 ![alt text](image-3.png)
-* Step 4: Github will then clone the repository into your chosen GitHub account.
+*** Step 4:*** Github will then clone the repository into your chosen GitHub account.
 
 In a couple of steps, you have successfully forked a repository into our own GitHub account. The full repository is cloned and allows us to work directly in that repository as if it was our own.
 
 On the landing page of the GitHub repository, it will show directly under the repository name that it was forked from Meta-Front-End-Developer-PC/forking-lesson.
+
 ![alt text](image-4.png)
+
 Other subtle differences in the GitHub UI on a forked branch is the top information bar above the files.
 
 It now shows that the branch is up to date with forking-lesson:main. It also adds a Fetch upstream drop-down to allow you to pull and merge the latest changes from the original repository.
 ![alt text](image-5.png)
-**Example**
+
+# Example
 Let's run through a typical flow of creating a new branch and adding some new content.
 
 **Step 1:** Clone the repository.
@@ -33,21 +36,21 @@ Let's run through a typical flow of creating a new branch and adding some new co
 ***Step 2:*** Create a new branch.
 
 ```console
-***git checkout -b test/forking-example ***
+git checkout -b test/forking-example
 ```
 
 ***Step 4:*** Create a new file and commit it to the repository.
 
 ```console
-**touch text.txt
+touch text.txt
 git add . 
-git commit -m 'chore: testing'**
+git commit -m 'chore: testing'
 ```
 
 ***Step 5*** Push the branch to your remote repository.
 
 ```console
-***git push -u origin test/forking-example ***
+git push -u origin test/forking-example
 ```
 
 ***Step 6:*** Go to Github and click the Compare & pull request button. If it's not available, click on the branch dropdown button and change it from main to the branch name of test/forking-example:
