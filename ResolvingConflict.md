@@ -1,4 +1,4 @@
-Resolving conflicts
+### Resolving conflicts
 Conflicts will normally occur when you try to merge a branch that may have competing changes. Git will normally try to automatically merge (auto-merge), but in the case of a conflict, it will need some confirmation. The competing changes need to be resolved by the end user. This process is called merging or rebasing. 
 
 The developer must look at the changes on the server and their local and validate which changes should be resolved.
